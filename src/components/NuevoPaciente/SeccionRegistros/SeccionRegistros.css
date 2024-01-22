@@ -1,0 +1,79 @@
+.formulario-registro-paciente {
+    padding: 20px;
+    margin: 70px 0px;
+}
+.formulario-registro-paciente .formulario-contenedor{
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0px -2px 6.400000095367432px -1px rgba(19, 16, 34, 0.03), 0px -4.6px 12px -1px rgba(19, 16, 34, 0.06);
+    border-radius: 8px;
+    max-width: 1300px;
+    margin: auto;
+}
+.formulario-registro-paciente .formulario-contenedor .campos{
+    display: flex;
+    flex-direction: column;
+}
+.formulario-registro-paciente .campos label{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    line-height: 26px;
+    color: #131022;
+}
+.formulario-registro-paciente .campos input,
+.formulario-registro-paciente .campos select{
+    width: 200px;
+    padding: 13px 10px;
+    border: 1px solid #D4D7E5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.formulario-registro-paciente .campos input:focus,
+.formulario-registro-paciente .campos select:focus,
+.formulario-registro-paciente .campos textarea:focus {
+    border-color: #9E9E9E;
+    outline: none;
+}
+.formulario-registro-paciente .campos textarea{
+    resize: none;
+    width: 462px;
+    padding: 13px 10px;
+    border: 1px solid #D4D7E5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 100px;
+}
+.formulario-registro-paciente .registro-pagina{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.formulario-registro-paciente .formulario-contenedor .registro-pagina .campos-combinados{
+    border: 1px solid #D4D7E5;
+    padding: 20px;
+    border-radius: 8px;
+}
+.formulario-registro-paciente .formulario-contenedor .registro-pagina .campos-combinados > div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.formulario-registro-paciente .formulario-contenedor .botones-form{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+}
+@media only screen and (max-width: 525px) {
+    .formulario-registro-paciente .campos textarea,
+    .formulario-registro-paciente .campos input,
+    .formulario-registro-paciente .campos select{
+        max-width: 80vw;
+    }
+    .formulario-registro-paciente .formulario-contenedor{
+        padding: 40px 10px;
+    }
+}

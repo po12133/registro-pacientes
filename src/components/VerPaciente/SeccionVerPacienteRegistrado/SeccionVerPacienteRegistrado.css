@@ -1,0 +1,116 @@
+.ver-paciente-registrado > div{
+    max-width: 1300px;
+    margin: auto;
+}
+.ver-paciente-registrado > div > .tabla-contenedor > table{
+    width: 100%;
+}
+
+.ver-paciente-registrado > div > .tabla-contenedor > table{
+    text-align: center;
+    box-shadow: 0px 8px 18px -8px rgba(99, 102, 241, 0.9);
+    margin: auto;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.ver-paciente-registrado > div > .tabla-contenedor > table thead {
+    background-color: #0099cc;
+    color: white;
+    text-align: center;
+    height: 45px;
+    position: sticky;
+    top: -10px;
+    z-index: 10;
+}
+.ver-paciente-registrado > div > .tabla-contenedor > table  tr > th{
+    min-width: 101px;
+}
+.ver-paciente-registrado > div > .tabla-contenedor > table  tr > td ul{
+    list-style: none;
+    padding: 0;
+}
+.ver-paciente-registrado > div > .tabla-contenedor > table tr:nth-child(even) {
+    background-color: #0099cc12;
+}
+
+
+.ver-paciente-registrado {
+    padding: 20px;
+    margin: 70px 0px;
+}
+.ver-paciente-registrado .registro-paciente{
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0px -2px 6.400000095367432px -1px rgba(19, 16, 34, 0.03), 0px -4.6px 12px -1px rgba(19, 16, 34, 0.06);
+    border-radius: 8px;
+    max-width: 1300px;
+    margin: auto;
+}
+.ver-paciente-registrado .registro-paciente .campos-ver{
+    display: flex;
+    flex-direction: column;
+}
+.ver-paciente-registrado .campos-ver label{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    line-height: 26px;
+    color: #131022;
+}
+.ver-paciente-registrado .campos-ver input,
+.ver-paciente-registrado .campos-ver select{
+    width: 200px;
+    padding: 13px 10px;
+    border: none;
+    border-bottom: 1px solid #D4D7E5;
+    margin-bottom: 20px;
+}
+.ver-paciente-registrado .campos-ver input:focus,
+.ver-paciente-registrado .campos-ver select:focus,
+.ver-paciente-registrado .campos-ver textarea:focus {
+    border-color: #9E9E9E;
+    outline: none;
+}
+.ver-paciente-registrado .campos-ver textarea{
+    resize: none;
+    width: 462px;
+    padding: 13px 10px;
+    border: 1px solid #D4D7E5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 100px;
+}
+.ver-paciente-registrado .registro-pagina{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.ver-paciente-registrado .registro-paciente .registro-pagina .campos-combinados{
+    border: 1px solid #D4D7E5;
+    padding: 20px;
+    border-radius: 8px;
+}
+.ver-paciente-registrado .registro-paciente .registro-pagina .campos-combinados > div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.ver-paciente-registrado .registro-paciente .botones-form{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+}
+@media only screen and (max-width: 525px) {
+    .ver-paciente-registrado .campos-ver textarea,
+    .ver-paciente-registrado .campos-ver input,
+    .ver-paciente-registrado .campos-ver select{
+        max-width: 80vw;
+    }
+    .ver-paciente-registrado .registro-paciente{
+        padding: 40px 10px;
+    }
+}

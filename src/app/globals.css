@@ -1,27 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --color-primario: #009FDE; 
+    --color-secundario: #f7f7f7; 
+    --color-texto: #000000;
+}
+body{
+    background: var(--color-secundario);
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Manrope', sans-serif;
+}
+.ocultar{
+    display: none !important;
+}
+a,
+button{
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.hero-button {
+    border-radius: 8px;
+    background: var(--color-primario);
+    box-shadow: 0px 8px 18px -8px rgba(99, 102, 241, 0.90);
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 600;
+    margin: 15px;
+    transition: 0.5s;
+    border: none;
+    padding: 5px 20px;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.hero-button:hover {
+    box-shadow: 0px 8px 18px -8px rgba(99, 101, 241, 0);
+    transform: scale(0.95);
 }
