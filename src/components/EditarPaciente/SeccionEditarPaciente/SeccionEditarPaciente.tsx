@@ -574,18 +574,13 @@ export default function SeccionEditarPaciente() {
                             ingreso:dataIngreso.map((ingreso) => ({
                                 id: ingreso.id,
                                 fecha: ingreso.fecha_in || new Date(),
-                                hora: ingreso.hora instanceof Date
-                                    ? ingreso.hora.toLocaleTimeString('en-US', {
-                                        hour: '2-digit',
-                                        minute: '2-digit',
-                                        second: '2-digit',
-                                        hour12: false,
-                                    })
-                                    : new Date().toLocaleTimeString('en-US', {
-                                        hour: '2-digit',
-                                        minute: '2-digit',
-                                        second: '2-digit',
-                                        hour12: false,
+                                hora: ingreso?.hora
+                                ? ingreso?.hora + ':00'  // Añadir ':00' para tener un formato completo "HH:mm:ss"
+                                : new Date().toLocaleTimeString('en-US', {
+                                    hour: '2-digit',
+                                    minute: '2-digit',
+                                    second: '2-digit',
+                                    hour12: false,
                                     }),
                                 servicio: ingreso.servicio || null,
                                 sala: ingreso.sala || null,

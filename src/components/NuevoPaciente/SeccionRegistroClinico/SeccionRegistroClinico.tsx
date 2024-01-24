@@ -461,6 +461,9 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                 }
             );
             const data_postPaciente = await postPaciente.json();
+            console.log("Tipo de ingresos[0]?.hora:", typeof ingresos[0]?.hora);
+            console.log("Valor de ingresos[0]?.hora:", ingresos[0]?.hora);
+
             const postClinico = await fetch(
                 `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/historial-clinicos`,
                 {
@@ -491,18 +494,13 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 {
                                     fecha: ingresos[0]?.fecha_in || new Date(),
                                     hora: ingresos[0]?.hora
-                                        ? ingresos[0]?.hora.toLocaleTimeString('en-US', {
-                                            hour: '2-digit',
-                                            minute: '2-digit',
-                                            second: '2-digit',
-                                            hour12: false, // Esto quita el AM/PM
-                                        })
+                                        ? ingresos[0]?.hora + ':00'  // Añadir ':00' para tener un formato completo "HH:mm:ss"
                                         : new Date().toLocaleTimeString('en-US', {
                                             hour: '2-digit',
                                             minute: '2-digit',
                                             second: '2-digit',
                                             hour12: false,
-                                        }),
+                                            }),
                                     servicio: ingresos[0]?.servicio || null,
                                     sala: ingresos[0]?.sala || null,
                                     cama: ingresos[0]?.cama || null,
@@ -588,7 +586,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 value={formPaciente.ap_paterno}
                                 maxLength={50}
                                 onChange={handleChange}
-                                required
+                                //required
                             />
                         </div>
                         <div className='campos'>
@@ -601,7 +599,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 value={formPaciente.ap_materno}
                                 maxLength={50}
                                 onChange={handleChange}
-                                required
+                                //required
                             />
                         </div>
                         <div className='campos'>
@@ -614,7 +612,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 value={formPaciente.nombres}
                                 maxLength={50}
                                 onChange={handleChange}
-                                required
+                                //required
                             />
                         </div>
                         <div className='campos'>
@@ -639,7 +637,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 value={formPaciente.genero}
                                 maxLength={50}
                                 onChange={handleChange}
-                                required
+                                //required
                             />
                         </div>
                         <div className='campos'>
@@ -651,7 +649,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 data-interface="formPaciente"
                                 value={formPaciente.fec_nac.toString()}
                                 onChange={handleChange}
-                                required
+                                //required
                             />
                         </div>
                         <div className='campos'>
@@ -663,7 +661,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 data-interface="formPaciente"
                                 value={formPaciente.edad !== null ? formPaciente.edad : ''}
                                 onChange={handleChange}
-                                required
+                                //required
                             />
                         </div>
                         <div className='campos'>
@@ -676,7 +674,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 value={formPaciente.lugar_nac}
                                 maxLength={50}
                                 onChange={handleChange}
-                                required
+                                //required
                             />
                         </div>
                         <div className='campos'>
@@ -689,7 +687,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 value={formPaciente.ciudad}
                                 maxLength={50}
                                 onChange={handleChange}
-                                required
+                                //required
                             />
                         </div>
                         <div className='campos'>
@@ -714,7 +712,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 value={formPaciente.direccion}
                                 maxLength={50}
                                 onChange={handleChange}
-                                required
+                                //required
                             />
                         </div>
                         <div className='campos'>
@@ -761,7 +759,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 data-interface="formClinico"
                                 value={formClinico.grado_de_instruccion}
                                 onChange={handleChange}
-                                required
+                                //required
                             >
                                 <option value="NINGUNO" selected>NINGUNO</option>
                                 <option value="A">A</option>
@@ -1027,7 +1025,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 data-interface="formClinico"
                                 value={formClinico.causa_del_egreso}
                                 onChange={handleChange}
-                                required
+                                //required
                             >
                                 <option value="HOSPITALARIA" selected>HOSPITALARIA</option>
                                 <option value="TRANSFERENCIA">TRANSFERENCIA</option>
@@ -1044,7 +1042,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 data-interface="formClinico"
                                 value={formClinico.condicion_al_egreso}
                                 onChange={handleChange}
-                                required
+                                //required
                             >
                                 <option value="CURADO" selected>CURADO</option>
                                 <option value="MEJORADO">MEJORADO</option>
@@ -1191,7 +1189,7 @@ const SeccionRegistroClinico: React.FC<SeccionRegistroClinicoProps> = ({ datosCo
                                 name="paciente"
                                 data-interface="formAtencion"
                                 onChange={handleChange}
-                                required
+                                //required
                             >
                             {id_paciente === 0 ? (
                                 <>
